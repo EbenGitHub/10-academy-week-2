@@ -1,0 +1,16 @@
+services:
+
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=10a
+      - POSTGRES_PASSWORD=10a
+      - POSTGRES_DB=telecom
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+
+volumes:
+  postgres:
